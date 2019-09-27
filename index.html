@@ -1,2 +1,69 @@
-Enter the randoverse... The home of the random sandwhich generator.
+<html>
+<head>
+    <title>Enter the randoverse... The home of the random sandwhich generator.</title>
+</head>
+<body>
 
+<script>
+    let nonmeats = [
+      'tomatoes',
+      'lettuce',
+      'mayonaise',
+      'mustard',
+      'ketchup',
+      'jalapeno',
+      'salt',
+      'pepper',
+      'basil',
+      'dill',
+      'olive',
+      'green onion',
+      'peppercini',
+      'banana pepper'
+    ];
+
+    let meats = [
+      'honeyed ham',
+      'balony',
+      'turkey',
+      'roast beef',
+      'chicken',
+      'pastrami',
+      'salami',
+      'pepperoni',
+      'italian sausage',
+      'bacon',
+      'canadian bacon',
+      'anchovy',
+      'crab',
+      'salmon',
+      'clams',
+      'oysters',
+      'scallop',
+      'lobster',
+      'kangaroo',
+      'sirloin steak',
+      'shark fin'
+    ];
+
+    let randosando = [];
+
+    let layers = 8;
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    for (let i = 0; i < 8; i++) {
+        let meatsOrNomeats = getRandomInt(3);
+        if (meatsOrNomeats >= 1) {
+            randosando.push(nonmeats[getRandomInt(nonmeats.length-1)]);
+        } else {
+            randosando.push(meats[getRandomInt(meats.length-1)]);
+        }
+    }
+
+    console.log(randosando);
+</script>
+</body>
+</html>
